@@ -4,6 +4,23 @@ env:
   dockerid: ${{ secrets.dockerid }}
   dockerpass: ${{ secrets.dockerpass }}
 jobs:
+  android-vcpkg-docker:
+    name: Prepare vcpkg docker for Android
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Remember if you commit this, newly built images will replace those tags.
+        # Prefer incrementing the version to unused one
+        tag: [13-androidvcpkg]
+    env:
+      dockertag: ${{ matrix.tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build docker image
+        run: |
+          ctxpath=${dockertag//-/\/}
+          docker build -t openrct2/openrct2-build:$dockertag $ctxpath
   build:
     name: Build
     runs-on: ubuntu-latest
