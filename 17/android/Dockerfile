@@ -40,7 +40,7 @@ RUN yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/
 
 # Install NDK
 RUN "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "ndk;27.2.12479018"
-RUN "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "cmake;3.22.1"
+RUN "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "cmake;3.31.1"
 RUN "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;34.0.0"
 RUN "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-34"
 RUN "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools"
