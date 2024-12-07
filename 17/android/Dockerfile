@@ -1,5 +1,5 @@
 # Default image that can build OpenRCT2 for Android.
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get -y upgrade && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
